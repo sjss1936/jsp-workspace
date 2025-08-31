@@ -1,3 +1,5 @@
+/* validation.js */
+
 function CheckAddProduct() {
 
 	var productId = document.getElementById("productId");
