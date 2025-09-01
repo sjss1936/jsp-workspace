@@ -1,26 +1,27 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
-<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 <script type="text/javascript" src="./resources/js/validation.js"></script>
+<link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    >
 <title>상품 등록</title>
 </head>
 <body>
-	<fmt:setLocale value='<%= request.getParameter("language") %>'/>
-	<fmt:bundle basename="bundle.message" >
+<fmt:setLocale value='<%=request.getParameter("language") %>'/>
+<fmt:bundle basename="bundle.message">
 	<jsp:include page="menu.jsp" />	
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-3"><fmt:message key="title" /></h1>
+			<h1 class="display-3"><fmt:message key="title"/></h1>
 		</div>
 	</div>
 	<div class="container">
-		<div class="text-right"> 
-			<a href="?language=ko" >Korean</a>|<a href="?language=en" >English</a>
-			<a href="logout.jsp" class="btn btn-sm btn-success pull-right">logout</a>
-		</div>	
+	    <div class="text-right">
+	       <a href="?language=ko">Korean</a> | <a href="?language=en">English</a>
+	       <a href="logout.jsp" class="btn btn-success pull-right">logout</a>
+	    </div>
 		<form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
 			<div class="form-group row">
 				<label class="col-sm-2"><fmt:message key="productId" /></label>
@@ -68,7 +69,7 @@
 				<label class="col-sm-2"><fmt:message key="condition" /></label>
 				<div class="col-sm-5">
 					<input type="radio" name="condition" value="New " ><fmt:message key="condition_New"/> 
-					<input type="radio" name="condition" value="Old" ><fmt:message key="condition_Old" />
+					<input type="radio" name="condition" value="Old" ><fmt:message key="condition_Old" /> 
 					<input type="radio" name="condition" value="Refurbished" ><fmt:message key="condition_Refurbished" />
 				</div>
 			</div>
@@ -80,12 +81,12 @@
 			</div>
 			<div class="form-group row">
 				<div class="col-sm-offset-2 col-sm-10 ">
-					<input type="button" class="btn btn-primary" value="<fmt:message key="button" />" onclick="CheckAddProduct()">
+					<input type="button" class="btn btn-primary" value="<fmt:message key="button" />" 
+					 onclick="CheckAddProduct()">
 				</div>
 			</div>
 		</form>
 	</div>
-	</fmt:bundle>
+</fmt:bundle><!-- fmtbundle 닫기 -->	
 </body>
 </html>
-
