@@ -6,9 +6,9 @@
 <title>Security</title>
 </head>
 <body>
-<form name="loginForm" action="j_security_check" method="post">
-	<p> 사용자명:<input name="j_username">
-	<p> 비밀번호:<input type="password" name="j_password">
+<form name="loginForm" action="session01_process.jsp" method="post">
+	<p> 사용자명:<input name="username">
+	<p> 비밀번호:<input type="password" name="password">
 	<p><input type="submit" value="전송">
 </form>
 </body>
